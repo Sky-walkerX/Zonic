@@ -79,7 +79,7 @@ This project requires two separate `.env` files. Create them based on the exampl
     ```dotenv
     # Spotify Credentials (Required)
     SPOTIFY_CLIENT_ID="e03a236e3b9044bc95cf871699d4a6ed"
-    SPOTIFY_CLIENT_SECRET=""7cb88ff52b7544ed8e3835eac016bed9" # Keep Secret!
+    SPOTIFY_CLIENT_SECRET="7cb88ff52b7544ed8e3835eac016bed9"
     SPOTIFY_REDIRECT_URI=http://localhost:5000/callback
 
     # App URLs (Required)
