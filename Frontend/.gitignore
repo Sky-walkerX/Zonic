@@ -1,0 +1,63 @@
+
+# Dependencies
+/node_modules/
+
+# Build output (Vite typically uses 'dist')
+/dist/
+/out/
+/build/
+/.output/
+
+# Vite specific cache/temporary directory
+.vite/
+/.vite-inspect/ # Vite inspect plugin output
+
+# Environment Variables
+# While VITE_ variables are embedded at build time and not truly 'secret',
+# it's often good practice to manage them via deployment environment variables.
+# Avoid committing potentially sensitive URLs or development keys.
+.env
+.env.*
+!.env.example
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Optional: Lock files (usually committed, but can be ignored in some workflows)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE / Editor directories
+.idea/
+.vscode/
+*.sublime-workspace
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Test runner output
+/coverage/
+/reports/
+*.lcov
+
+# Misc
+.eslintcache
+*.tsbuildinfo

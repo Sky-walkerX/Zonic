@@ -1,0 +1,67 @@
+
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "backend/index.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "frontend/package.json",
+        "use": "@vercel/vite"     
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/(.*)",     
+        "dest": "backend/api.js"  
+      },
+      {
+        "src": "/login",
+        "dest": "backend/api.js"
+      },
+      {
+        "src": "/callback",
+        "dest": "backend/api.js"
+      },
+      {
+        "src": "/refresh_token",
+        "dest": "backend/api.js"
+      },
+      
+       {
+         "src": "/user",
+         "dest": "backend/api.js"
+       },
+       {
+         "src": "/playlists",
+         "dest": "backend/api.js"
+       },
+       {
+         "src": "/playlists/(.*)/tracks", 
+         "dest": "backend/api.js"
+       },
+       {
+          "src": "/liked-songs",
+          "dest": "backend/api.js"
+       },
+       {
+           "src": "/top-tracks",
+           "dest": "backend/api.js"
+       },
+       {
+           "src": "/me/shows",
+           "dest": "backend/api.js"
+       },
+    
+      {
+        "src": "/(.*\\..*)", 
+        "dest": "frontend/$1"
+      },
+      
+      {
+        "src": "/(.*)",         
+        "dest": "frontend/index.html" 
+      }
+    ]
+  }
