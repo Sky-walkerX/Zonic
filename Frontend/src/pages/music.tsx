@@ -9,8 +9,7 @@ import {
     TabsList,
     TabsTrigger,
 } from "@/registry/ui/tabs";
-import dotenv from 'dotenv'
-dotenv.config()
+
 
 import { AlbumArtwork } from "@/components/ui/album-artwork";
 import { Menu } from "@/components/ui/menu";

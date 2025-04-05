@@ -310,18 +310,18 @@ app.get('/api/search', async (req, res) => {
 });
 
 const PORT = process.env.PORT || 5000;
-// app.listen(PORT, () => {
-//     console.log(`\n Backend server running at http://localhost:${PORT}`);
-//     console.log(` Configured Frontend URL: ${frontend_uri}`);
-//     console.log(`Initiate Spotify login via backend: http://localhost:${PORT}/login`);
-//     console.log(`Spotify Callback URL: ${redirect_uri}`);
+app.listen(PORT, () => {
+    console.log(`\n Backend server running at http://localhost:${PORT}`);
+    console.log(` Configured Frontend URL: ${frontend_uri}`);
+    console.log(`Initiate Spotify login via backend: http://localhost:${PORT}/login`);
+    console.log(`Spotify Callback URL: ${redirect_uri}`);
     
-//     if (!SPOTIFY_CLIENT_ID || !SPOTIFY_CLIENT_SECRET) {
-//          console.warn("WARNING: SPOTIFY_CLIENT_ID or SPOTIFY_CLIENT_SECRET seem missing in .env!");
-//     }
-//      if (!OPENWEATHER_API_KEY || !NEWS_API_KEY || !GIPHY_API_KEY || !GOOGLE_API_KEY || !GOOGLE_CSE_ID) {
-//          console.warn("WARNING: One or more external API keys (Weather, News, Giphy, Google Search) might be missing in .env!");
-//      }
+    if (!SPOTIFY_CLIENT_ID || !SPOTIFY_CLIENT_SECRET) {
+         console.warn("WARNING: SPOTIFY_CLIENT_ID or SPOTIFY_CLIENT_SECRET seem missing in .env!");
+    }
+     if (!OPENWEATHER_API_KEY || !NEWS_API_KEY || !GIPHY_API_KEY || !GOOGLE_API_KEY || !GOOGLE_CSE_ID) {
+         console.warn("WARNING: One or more external API keys (Weather, News, Giphy, Google Search) might be missing in .env!");
+     }
     
-// });
+});
 export default app;
