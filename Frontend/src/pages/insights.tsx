@@ -7,6 +7,7 @@ import { Separator } from "@/registry/ui/separator";
 import { FaSearch, FaCloudSun, FaArrowLeft } from 'react-icons/fa';
 import { usePlayerContext } from '@/context/PlayerContext';
 import { BackgroundBeamsWithCollision } from '@/components/ui/background-beams-with-collision';
+import {GridDot} from '@/components/ui/GridDot'
 
 interface NewsArticle {
   title: string;
@@ -337,7 +338,7 @@ function InsightsPage() {
 
   return (
     <div className="relative min-h-screen w-full overflow-x-hidden bg-background text-foreground">
-      <BackgroundBeamsWithCollision className="absolute inset-0 top-50">
+      <BackgroundBeamsWithCollision className="absolute inset-0 top-100">
         {null}
       </BackgroundBeamsWithCollision>
       <div className="relative z-10 p-4 md:p-6 max-w-5xl mx-auto space-y-6">
@@ -369,10 +370,16 @@ function InsightsPage() {
           </Card>
         )}
         {(trackName || artistName) && (
-          <Card>
+          <Card className="relative min-h-[300px] overflow-hidden">
+          <div className="absolute inset-0 z-10 opacity-40">
+            <GridDot /> 
+          </div>
+        
+          <div className="relative z-10">
             <CardHeader>
               <CardTitle className="text-xl">Visual Vibe</CardTitle>
             </CardHeader>
+        
             <CardContent>
               <MoodGif
                 gifUrl={gifUrl}
@@ -380,7 +387,9 @@ function InsightsPage() {
                 searchTerm={artistName || trackName}
               />
             </CardContent>
-          </Card>
+          </div>
+        </Card>
+        
         )}
         <Card>
           <CardHeader>
