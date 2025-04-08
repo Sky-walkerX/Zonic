@@ -78,8 +78,8 @@ This project requires two separate `.env` files. Create them based on the exampl
 *   **`backend/.env`:** (Create this file in the `backend` directory)
     ```dotenv
     # Spotify Credentials (Required)
-    SPOTIFY_CLIENT_ID="e03a236e3b9044bc95cf871699d4a6ed"
-    SPOTIFY_CLIENT_SECRET="7cb88ff52b7544ed8e3835eac016bed9"
+    SPOTIFY_CLIENT_ID
+    SPOTIFY_CLIENT_SECRET=
     SPOTIFY_REDIRECT_URI=http://localhost:5000/callback
 
     # App URLs (Required)
@@ -87,11 +87,11 @@ This project requires two separate `.env` files. Create them based on the exampl
     PORT=5000 # Or another port for the backend
 
     # External API Keys (Required for Insights)
-    NEWS_API_KEY="2a5a5ec41c924863821840c39b40f82b"
-    GIPHY_API_KEY="s2aqwnXetgAXhdI7ZWbO812golV0aFZq"
-    GOOGLE_SEARCH_API_KEY="AIzaSyANz0EqMsst1eyRkpkLhuUPEMQZn228cX4"
-    GOOGLE_SEARCH_ENGINE_ID="614af4e5a2f9548f7"
-    OPENWEATHER_API_KEY="8b7c05d4c1763a81dfc801a50548f7e9"
+    NEWS_API_KEY
+    GIPHY_API_KEY
+    GOOGLE_SEARCH_API_KEY
+    GOOGLE_SEARCH_ENGINE_ID
+    OPENWEATHER_API_KEY
     ```
 
 *   **`frontend/.env`:** (Create this file in the `frontend` directory)
