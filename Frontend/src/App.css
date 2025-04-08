@@ -118,3 +118,44 @@
     @apply bg-background text-foreground;
   }
 }
+
+.cursor {
+  @apply pointer-events-none;
+}
+
+.cursor__ball {
+  @apply fixed top-0 left-0 mix-blend-difference z-[1000];
+}
+
+.cursor__ball circle {
+  @apply fill-white;
+}
+
+/* Layout for left and right sections */
+.left, .right {
+  @apply h-full w-full flex flex-col justify-center items-center;
+}
+
+.right {
+  @apply bg-white;
+}
+
+.right a {
+  @apply border-b-2 border-black;
+}
+
+.right h1, .right p, .right a {
+  @apply text-black;
+}
+
+/* Link styles */
+a {
+  @apply border-b-2 border-white py-2.5 mt-6;
+}
+
+/* Ensure Tailwind includes these utilities if not already present */
+@layer utilities {
+  .mix-blend-difference {
+    mix-blend-mode: difference;
+  }
+}

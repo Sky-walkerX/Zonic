@@ -8,6 +8,7 @@ import { PlayerProvider, usePlayerContext } from "./context/PlayerContext"; // I
 import MusicPage from "@/pages/music";
 import InsightsPage from "@/pages/insights";
 
+
 // --- Import or Define SpotifyEmbedPlayer here ---
 // (You can keep the definition in MusicPage and import it,
 // or move the component definition here or to its own file)
@@ -73,6 +74,7 @@ function App() {
 
         </Router>
       </PlayerProvider>
+      {/* <CustomCursor />  */}
     </ThemeProvider>
   );
 }
