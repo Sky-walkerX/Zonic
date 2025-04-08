@@ -23,6 +23,15 @@ export const BackgroundBeamsWithCollision = ({
     { initialX: 800, translateX: 800, duration: 11, repeatDelay: 2, className: "h-20" },
     { initialX: 1000, translateX: 1000, duration: 4, repeatDelay: 2, className: "h-12" },
     { initialX: 1200, translateX: 1200, duration: 6, repeatDelay: 4, delay: 2, className: "h-6" },
+    { initialX: 1500, translateX: 1500, duration: 8, repeatDelay: 1, delay: 0, className: "h-10" },
+    { initialX: 200, translateX: 200, duration: 6, repeatDelay: 1, delay: 0, className: "h-8" },
+    { initialX: 150, translateX: 150, duration: 6, repeatDelay: 1, delay: 0, className: "h-8" },
+    { initialX: 350, translateX: 350, duration: 7, repeatDelay: 1, delay: 0, className: "h-10" },
+    { initialX: 550, translateX: 550, duration: 5, repeatDelay: 1, delay: 0, className: "h-4" },
+    { initialX: 750, translateX: 750, duration: 8, repeatDelay: 1, delay: 0, className: "h-12" },
+    { initialX: 950, translateX: 950, duration: 6, repeatDelay: 1, delay: 0, className: "h-6" },
+    { initialX: 1150, translateX: 1150, duration: 7, repeatDelay: 1, delay: 0, className: "h-10" },
+    { initialX: 1350, translateX: 1350, duration: 5, repeatDelay: 1, delay: 0, className: "h-8" },
   ];
 
   return (
@@ -82,7 +91,7 @@ const CollisionMechanism = React.forwardRef<
       repeatDelay?: number;
     };
   }
->(({ parentRef, containerRef, beamOptions = {} }, ref) => { // ref param from forwardRef is unused here, but okay
+>(({ parentRef, containerRef, beamOptions = {} }) => {
   const beamRef = useRef<HTMLDivElement>(null);
   const [collision, setCollision] = useState<{
     detected: boolean;
@@ -182,7 +191,7 @@ const CollisionMechanism = React.forwardRef<
           repeatDelay: beamOptions.repeatDelay || 0,
         }}
         className={cn(
-          "absolute left-0 top-0 m-auto h-14 w-px rounded-full bg-gradient-to-t from-indigo-500 via-purple-500 to-transparent", // Removed top-20, initialY handles start
+          "absolute left-0 top-0 m-auto h-20 w-px rounded-full bg-gradient-to-t from-indigo-500 via-purple-500 to-transparent", // Removed top-20, initialY handles start
           beamOptions.className
         )}
       />
