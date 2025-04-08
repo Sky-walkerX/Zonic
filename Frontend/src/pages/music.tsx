@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import  { useState, useEffect, useCallback } from 'react';
 import axios, { AxiosError } from 'axios';
 import { Switch } from "@/components/ui/switch";
 import { ScrollArea, ScrollBar } from "@/registry/ui/scroll-area";
