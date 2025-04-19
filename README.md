@@ -7,6 +7,9 @@
 
 A web application that integrates with Spotify to play music and podcasts, browse your library, and provides contextual insights like artist news, weather, and related GIFs.
 
+## Video
+https://drive.google.com/file/d/1O4fxz9kvcmRS_hxeUWE5YZjQOYaynYun/view?usp=drivesdk
+
 ---
 
 ## ✨ Features
