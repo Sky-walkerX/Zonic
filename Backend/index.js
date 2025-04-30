@@ -172,7 +172,7 @@ app.get("/user", requireAuth, async (req, res) => {
   }
 })
 
-app.get("playlists", requireAuth, async (req, res) => {
+app.get("/playlists", requireAuth, async (req, res) => {
   try {
     const limit = req.query.limit || 20
     const response = await axios.get("https://api.spotify.com/v1/me/playlists", {
@@ -189,7 +189,7 @@ app.get("playlists", requireAuth, async (req, res) => {
   }
 })
 
-app.get("liked-songs", requireAuth, async (req, res) => {
+app.get("/liked-songs", requireAuth, async (req, res) => {
   try {
     const limit = req.query.limit || 20
     const offset = req.query.offset || 0
@@ -207,7 +207,7 @@ app.get("liked-songs", requireAuth, async (req, res) => {
   }
 })
 
-app.get("top-tracks", requireAuth, async (req, res) => {
+app.get("/top-tracks", requireAuth, async (req, res) => {
   try {
     const limit = req.query.limit || 20
     const offset = req.query.offset || 0
