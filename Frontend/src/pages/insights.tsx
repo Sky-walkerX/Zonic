@@ -9,7 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/reg
 import { Separator } from "@/registry/ui/separator"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/registry/ui/tabs"
 import { FaCloudSun, FaArrowLeft, FaMusic, FaInfoCircle, FaGlobe } from "react-icons/fa"
-import { Music, Mic, Share2 } from "lucide-react"
+import { Music, Share2 } from "lucide-react"
 import { usePlayerContext } from "@/context/PlayerContext"
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision"
 import { GridDot } from "@/components/ui/GridDot"
@@ -198,7 +198,7 @@ function InsightsPage() {
   const [currentSearchQuery, setCurrentSearchQuery] = useState<string | null>(null)
   const [apiError, setApiError] = useState<string | null>(null)
   const [activeTab, setActiveTab] = useState("overview")
-  const [isPlaying, setIsPlaying] = useState(!!trackUri)
+  const [_isPlaying, setIsPlaying] = useState(!!trackUri)
 
   // Effect to update isPlaying when trackUri changes
   useEffect(() => {
@@ -325,12 +325,6 @@ function InsightsPage() {
     }
   }, [])
 
-  const handleLyricsSearch = useCallback(() => {
-    if (!trackName || !artistName) return
-    const query = `${trackName} by ${artistName} lyrics`
-    doGoogleSearch(query)
-  }, [trackName, artistName, doGoogleSearch])
-
   const handleArtistInfoSearch = useCallback(() => {
     if (!artistName) return
     const query = `${artistName} official website OR bio`
@@ -349,7 +343,6 @@ function InsightsPage() {
         .share({
           title: "Check out this track!",
           text: shareText,
-          // In a real app, you'd include a link to the track
           url: "https://example.com/share",
         })
         .catch((err) => console.error("Error sharing:", err))
@@ -362,10 +355,8 @@ function InsightsPage() {
     }
   }, [trackName, artistName])
 
-  // const primarySubjectName = artistName || trackName
-
   return (
-    <div className="relative min-h-screen w-full overflow-x-hidden bg-background text-foreground">
+    <div className="relative min-h-screen w-full overflow-x-hidden bg-background text- hullabaloo">
       <BackgroundBeamsWithCollision className="absolute inset-0 top-100">{null}</BackgroundBeamsWithCollision>
       <div className="relative z-10 p-4 md:p-6 max-w-5xl mx-auto space-y-6">
         <div className="flex items-center justify-between mb-4">
@@ -421,7 +412,7 @@ function InsightsPage() {
                   <FaMusic className="mr-2 h-4 w-4" /> Overview
                 </TabsTrigger>
                 <TabsTrigger value="lyrics">
-                  <Mic className="mr-2 h-4 w-4" /> Lyrics
+                  <Music className="mr-2 h-4 w-4" /> Lyrics
                 </TabsTrigger>
                 <TabsTrigger value="info">
                   <FaInfoCircle className="mr-2 h-4 w-4" /> Artist Info
@@ -464,9 +455,6 @@ function InsightsPage() {
                 <LyricsDisplay
                   trackName={trackName}
                   artistName={artistName}
-                  onLyricsSearch={handleLyricsSearch}
-                  isLoading={isLoadingSearch}
-                  searchResults={googleSearchResults}
                 />
               </TabsContent>
 
