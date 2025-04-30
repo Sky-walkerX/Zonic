@@ -13,13 +13,15 @@ import cookieParser from "cookie-parser"
 const redirect_uri = process.env.SPOTIFY_REDIRECT_URI
 const frontend_uri = process.env.FRONTEND_URI
 const app = express()
-app.use(
-  cors({
-    origin: frontend_uri,
-  }),
-)
+
 app.use(cookieParser())
 app.use(bodyParser.json())
+
+app.use(cors({
+  origin: "frontend_uri", 
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 
 const SPOTIFY_CLIENT_ID = process.env.SPOTIFY_CLIENT_ID
 const SPOTIFY_CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET
@@ -34,10 +36,7 @@ let storedAccessToken = null
 let storedRefreshToken = null
 let tokenExpiryTime = 0
 
-app.get("/test-backend", (req, res) => {
-  console.log("Received /test-backend request");
-  res.json({ message: "Backend is working!" });
-});
+
 
 app.get("/login", (req, res) => {
   const state = uuidv4() //Secure random UUID like "550e8400-e29b-41d4-a716-446655440000" as Spotify requires a state parameter to prevent CSRF attacks.
