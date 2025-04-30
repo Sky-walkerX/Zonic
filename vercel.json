@@ -3,13 +3,18 @@
   "builds": [
     {
       "src": "backend/index.js",
-      "use": "@vercel/node"
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["backend/**"],
+        "buildCommand": "cd backend && npm install"
+      }
     },
     {
       "src": "frontend/package.json",
       "use": "@vercel/vite",
       "config": {
-        "outputDirectory": "dist"
+        "outputDirectory": "dist",
+        "buildCommand": "cd frontend && npm install && npm run build"
       }
     }
   ],
