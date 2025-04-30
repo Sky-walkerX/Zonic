@@ -14,6 +14,7 @@
     }
   ],
   "routes": [
+    { "src": "/test-backend", "dest": "backend/index.js" },
     { "src": "/api/(.*)", "dest": "backend/index.js" },
     { "src": "/login", "dest": "backend/index.js" },
     { "src": "/callback", "dest": "backend/index.js" },
