@@ -36,7 +36,9 @@ let storedAccessToken = null
 let storedRefreshToken = null
 let tokenExpiryTime = 0
 
-
+app.get("/", (req, res) => {
+  res.send("Welcome to the Zonic backend!")
+})
 
 app.get("/login", (req, res) => {
   const state = uuidv4() //Secure random UUID like "550e8400-e29b-41d4-a716-446655440000" as Spotify requires a state parameter to prevent CSRF attacks.
