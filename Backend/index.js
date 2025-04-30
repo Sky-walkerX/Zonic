@@ -18,7 +18,7 @@ app.use(cookieParser())
 app.use(bodyParser.json())
 
 app.use(cors({
-  origin: "frontend_uri", 
+  origin: frontend_uri, 
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
