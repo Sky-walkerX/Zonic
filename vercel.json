@@ -1,69 +1,30 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "backend/index.js",
-        "use": "@vercel/node"
-      },
-      {
-        "src": "frontend/package.json",
-        "use": "@vercel/vite",
-        "config": {
-          "outputDirectory": "dist"
-        }
+  "version": 2,
+  "builds": [
+    {
+      "src": "backend/index.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/vite",
+      "config": {
+        "outputDirectory": "dist"
       }
-    ],
-    "routes": [
-      {
-        "src": "/api/(.*)",
-        "dest": "backend/api.js"
-      },
-      {
-        "src": "/login",
-        "dest": "backend/api.js"
-      },
-      {
-        "src": "/callback",
-        "dest": "backend/api.js"
-      },
-      {
-        "src": "/refresh_token",
-        "dest": "backend/api.js"
-      },
-      {
-        "src": "/user",
-        "dest": "backend/api.js"
-      },
-      {
-        "src": "/playlists",
-        "dest": "backend/api.js"
-      },
-      {
-        "src": "/playlists/(.*)/tracks",
-        "dest": "backend/api.js"
-      },
-      {
-        "src": "/liked-songs",
-        "dest": "backend/api.js"
-      },
-      {
-        "src": "/top-tracks",
-        "dest": "backend/api.js"
-      },
-      {
-        "src": "/me/shows",
-        "dest": "backend/api.js"
-      },
-  
-      {
-        "src": "/(.*\\..+)",
-        "dest": "frontend/dist/$1"
-      },
-  
-      {
-        "src": "/(.*)",
-        "dest": "frontend/dist/index.html"
-      }
-    ]
-  }
-  
+    }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "backend/index.js" },
+    { "src": "/login", "dest": "backend/index.js" },
+    { "src": "/callback", "dest": "backend/index.js" },
+    { "src": "/refresh_token", "dest": "backend/index.js" },
+    { "src": "/user", "dest": "backend/index.js" },
+    { "src": "/playlists", "dest": "backend/index.js" },
+    { "src": "/playlists/(.*)/tracks", "dest": "backend/index.js" },
+    { "src": "/liked-songs", "dest": "backend/index.js" },
+    { "src": "/top-tracks", "dest": "backend/index.js" },
+    { "src": "/me/shows", "dest": "backend/index.js" },
+    { "src": "/(.*\\..+)", "dest": "frontend/dist/$1" },
+    { "src": "/(.*)", "dest": "frontend/dist/index.html" }
+  ]
+}
